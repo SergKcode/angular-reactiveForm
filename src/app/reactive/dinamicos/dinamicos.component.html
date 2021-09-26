@@ -27,12 +27,12 @@
             <div class="input-group">
                 <input class="form-control"
                        placeholder="Agregar favorito"
-                      
-                      
-                       name="nuevoJuego">
+                       [formControl]="nuevoFavorito"
+                       (keyup.enter)="agregarFavorito()">
 
                 <button class="btn btn-outline-primary"
                         type="button"
+                        (click)="agregarFavorito()"
                         
                        >
                     Agregar
@@ -47,7 +47,7 @@
         <label class="col-sm-3 col-form-label">Favoritos</label>
         <div class="col-sm-9" formArrayName="favoritos">
 
-            <div class="input-group mb-1" *ngFor= "let favorito of miFormulario.controls.favoritos.controls; let i =index">
+            <div class="input-group mb-1" *ngFor= "let favorito of favoritosArr.controls; let i =index">
                 
                  
                 <input
