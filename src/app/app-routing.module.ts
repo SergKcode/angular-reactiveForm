@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'reactive',
     loadChildren: () => import('./reactive/reactive.module').then( m => m.ReactiveModule )
   },
+  { 
+    path: 'paises',
+    loadChildren: () => import('./paises/paises.module').then( m => m.PaisesModule )
+  },
   {
     path: '**',
     redirectTo: 'template'
